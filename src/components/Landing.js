@@ -1,18 +1,21 @@
 import React from "react";
-import stickyFigure from "../img/stick-figure.jpeg";
+import treeLine from "../img/treeLine.png";
 import { Jumbotron, Container, Row, Col, Image } from "react-bootstrap";
 
 const Landing = () => {
   return (
-    <Jumbotron style={{ minHeight: 700, top: 0 }}>
-      <Container fluid style={{ justifyContent: "center" }}>
+    <Jumbotron fluid style={{ minHeight: 700, marginBottom: 0 }}>
+      <Container fluid style={{ justifyContent: "center", position: "relative" }}>
         <Row className="justify-content-md-center">
-          <Col md="auto" style={{textAlign:"center"}}>
+          <Col style={{ textAlign: "center" }}>
             {/* <Image src={stickyFigure}/> */}
             <h1>Dylan Travis</h1>
             <hr></hr>
             <h3>Front End Web Developer</h3>
           </Col>
+        </Row>
+        <Row className="justify-content-md-center d-none d-sm-block" style={{ marginBottom: 0, position: "absolute", bottom: -514, marginRight: 0  }}>
+          <Image  src={treeLine} fluid/>
         </Row>
       </Container>
     </Jumbotron>

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Jumbotron, Container, Navbar, Nav, Badge, Col } from "react-bootstrap";
+import { Container, Navbar, Nav } from "react-bootstrap";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 const NavBar = () => {
@@ -9,20 +9,15 @@ const NavBar = () => {
     setOpen(!open);
   };
   return (
-    // <Jumbotron style={{ marginBottom: 0, background: "lightGrey" }}>
-    //
     <Navbar
       sticky="top"
-      className="stickyTop"
       expand="lg"
-      style={{ background: "#31708E" }}
+      style={{ background: "#31708E", marginTop: 0 }}
     >
       <Container>
         <Navbar.Brand>
           <Nav.Link href="/">
-            <h1>
-              <Badge variant="secondary">Dylan Travis</Badge>
-            </h1>
+            <h1 style={{ color: "#F7F9Fb" }}>Dylan Travis</h1>
           </Nav.Link>
         </Navbar.Brand>
         <Navbar.Toggle
@@ -37,18 +32,16 @@ const NavBar = () => {
             <Nav.Link href="/about">
               <h3>About</h3>
             </Nav.Link>
-            <Nav.Link href="/about">
+            <Nav.Link href="/">
               <FaGithub size="2rem" />
             </Nav.Link>
-            <Nav.Link href="/about">
+            <Nav.Link href="/">
               <FaLinkedin size="2rem" />
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
     </Navbar>
-    //
-    // </Jumbotron>
   );
 };
 
