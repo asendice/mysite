@@ -5,7 +5,7 @@ import { Jumbotron, Container, Row, Col, Image } from "react-bootstrap";
 const Contact = () => {
   return (
     <>
-      <Jumbotron style={{ marginBottom: 0 }}>
+      <Jumbotron style={{ marginBottom: 0, background: "#687864"  }}>
         <Container>
           <Row>
             <Col style={{ textAlign: "center" }}>

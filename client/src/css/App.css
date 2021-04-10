@@ -7,6 +7,26 @@
   justify-content: space-evenly;
 }
 
+.project-card:hover {
+  transform: scale(1.1);
+}
+
+.project-card {
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.carousel-image {
+  width: 100% !important;
+  height: 50vh;
+}
+
+.btn-pos {
+  left: 75%;
+  float: right !important;
+  display: flex;
+}
+
 @media screen and (max-width: 577px) {
   .mobileDis {
     display: none;

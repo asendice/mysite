@@ -12,12 +12,12 @@ const NavBar = () => {
     <Navbar
       sticky="top"
       expand="lg"
-      style={{ background: "#31708E", marginTop: 0 }}
+      style={{ marginTop: 0, background: "#687864" }}
     >
       <Container>
         <Navbar.Brand>
           <Nav.Link href="/">
-            <h1 style={{ color: "#F7F9Fb" }}>Dylan Travis</h1>
+            <h1 style={{ color: "#F7F9FB" }}>Dylan Travis</h1>
           </Nav.Link>
         </Navbar.Brand>
         <Navbar.Toggle
