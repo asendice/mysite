@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { Container, Navbar, Nav } from "react-bootstrap";
+import { Container, Navbar, Nav, Badge, Button } from "react-bootstrap";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { Link } from "react-scroll";
 
 const NavBar = () => {
   const [open, setOpen] = useState(false);
@@ -16,9 +17,11 @@ const NavBar = () => {
     >
       <Container>
         <Navbar.Brand>
-          <Nav.Link href="/">
-            <h1 style={{ color: "#F7F9FB" }}>Dylan Travis</h1>
-          </Nav.Link>
+          <Link to="home" spy={true} smooth={true} className="links">
+            <h1 style={{ color: "#F7F9FB", textDecoration: "none" }}>
+              Dylan Travis
+            </h1>
+          </Link>
         </Navbar.Brand>
         <Navbar.Toggle
           onClick={() => toggle()}
@@ -26,18 +29,46 @@ const NavBar = () => {
         />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ml-auto">
-            <Nav.Link href="/projects">
-              <h3>Projects</h3>
-            </Nav.Link>
-            <Nav.Link href="/about">
-              <h3>About</h3>
-            </Nav.Link>
-            <Nav.Link href="/">
-              <FaGithub size="2rem" />
-            </Nav.Link>
-            <Nav.Link href="/">
-              <FaLinkedin size="2rem" />
-            </Nav.Link>
+            <Link
+              to="projects"
+              spy={true}
+              smooth={true}
+              className="links"
+              style={{ color: "#fff" }}
+            >
+              <Badge className="navBadge">
+                <h3>Projects</h3>
+              </Badge>
+            </Link>
+            <Link
+              to="about"
+              spy={true}
+              smooth={true}
+              className="links"
+              style={{ color: "#fff" }}
+            >
+              <Badge className="navBadge">
+                <h3>About</h3>
+              </Badge>
+            </Link>
+            <a
+              href="https://github.com/asendice"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <Badge style={{ color: "#fff" }}>
+                <FaGithub size="2rem" />
+              </Badge>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/dylan-travis-2716a4205/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <Badge style={{ color: "#fff" }}>
+                <FaLinkedin size="2rem" />
+              </Badge>
+            </a>
           </Nav>
         </Navbar.Collapse>
       </Container>

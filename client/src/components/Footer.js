@@ -5,7 +5,7 @@ import { FaRegCopyright } from "react-icons/fa";
 const Footer = () => {
   return (
     <>
-      <Container fluid style={{ background: "#687864", minHeight: 35 }}>
+      <Container fluid style={{ background: "#31708E", minHeight: 35 }}>
         <Row className="justify-content-md-center" >
           <Col style={{ textAlign: "center" }}>
             <span>

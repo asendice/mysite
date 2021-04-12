@@ -4,6 +4,7 @@ import {
   Jumbotron,
   Container,
   Button,
+  Badge,
   Row,
   Col,
   CardDeck,
@@ -18,6 +19,8 @@ const Projects = () => {
   const [projects, setProjects] = useState([]);
   const [selectedProj, setSelectedProj] = useState({});
   const [open, setOpen] = useState(false);
+
+  console.log((selectedProj), "selectedProj");
 
   const getProjects = async () => {
     await backendApi
@@ -45,6 +48,20 @@ const Projects = () => {
     console.log("clicked");
     setSelectedProj(proj);
     setOpen(!open);
+  };
+
+  const renderSkills = () => {
+    if (selectedProj.skills) { 
+      return selectedProj.skills.map((skill) => {
+        return (
+          <>
+          <Badge style={{ background: "grey", color: "#fff" }}>{skill}</Badge> {" "}
+          </>
+        );
+      });
+    } else {
+      return null;
+    }
   };
 
   const renderCards = () => {
@@ -100,34 +117,33 @@ const Projects = () => {
             <hr />
             <div>{selectedProj.description}</div>
           </Container>
-          <Container >
-            <Carousel style={{border: "black solid 2px"}}>
+          <Container>
+            <Carousel style={{ border: "black solid 2px" }}>
               <Carousel.Item>
                 <Image
-                  className="carousel-image"
+                  className="carousel-image modal-image"
                   src={selectedProj.imgOne}
                   alt="first slide"
                 />
               </Carousel.Item>
               <Carousel.Item>
                 <Image
-                  className="carousel-image"
+                  className="carousel-image modal-image"
                   src={selectedProj.imgTwo}
                   alt="second slide"
                 />
               </Carousel.Item>
               <Carousel.Item>
                 <Image
-                  className="carousel-image"
+                  className="carousel-image modal-image"
                   src={selectedProj.imgThree}
                   alt="third slide"
                 />
               </Carousel.Item>
             </Carousel>
-            <hr style={{display: "hidden"}}/>
+            <hr style={{ display: "hidden" }} />
             <Modal.Title>Skills</Modal.Title>
-            <hr />
-            <div>{selectedProj.skills}</div>
+            {renderSkills()}
           </Container>
         </Modal.Body>
       </Modal>
@@ -135,10 +151,8 @@ const Projects = () => {
   };
 
   return (
-    <>
-      <Jumbotron
-        style={{ minHeight: 700, marginBottom: 0}}
-      >
+    <div id="projects">
+      <Jumbotron style={{ minHeight: 700, marginBottom: 0 }} className="smt">
         <Container style={{ justifyContent: "center" }}>
           <Row className="justify-content-md-center">
             <Col style={{ textAlign: "center" }}>
@@ -152,7 +166,7 @@ const Projects = () => {
         </Container>
       </Jumbotron>
       {renderModal()}
-    </>
+    </div>
   );
 };
 

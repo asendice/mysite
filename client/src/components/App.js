@@ -8,14 +8,15 @@ import Contact from "./Contact";
 
 const App = () => {
   return (
-    <>
+    <React.Fragment >
       <NavBar />
+
       <Landing />
       <Projects />
       <About />
       <Contact />
       <Footer />
-    </>
+    </React.Fragment>
   );
 };
 
